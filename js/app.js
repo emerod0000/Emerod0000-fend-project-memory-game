@@ -5,6 +5,11 @@
 array = ["fa fa diamond",  "fa fa diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", 
 "fa fa-cube", "fa fa-cube","fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
  
+
+ /*moves*/
+let moves = 0;
+let movesCounter =document.querySelector('.moves');
+movesCounter.innerHTML = moves;
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -27,12 +32,14 @@ function shuffle(array) {
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-for var i = 0; i < array.length; i++) {
- resetPage();
+for (var i = 0; i < array.length; i++) {
+
 
 }
 
+function resetPage(){
 
+	}
 
 /*
  * set up the event listener for a card. If a card is clicked:
