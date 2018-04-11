@@ -11,6 +11,8 @@ let moves = 0;
 let movesCounter =document.querySelector('.moves');
 movesCounter.innerHTML = moves;
 /*
+
+
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
 // Shuffle function from http://stackoverflow.com/a/2450976*/
