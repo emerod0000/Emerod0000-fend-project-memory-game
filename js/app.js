@@ -10,9 +10,17 @@ array = ["fa fa diamond",  "fa fa diamond", "fa fa-paper-plane-o", "fa fa-paper-
 let moves = 0;
 let movesCounter =document.querySelector('.moves');
 movesCounter.innerHTML = moves;
+
+
+
+
+/*stars*/
+let stars = "";
+let starsCounter =document.querySelector('.stars');
+starsCounter.innerHTML = stars;
+
+
 /*
-
-
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
 // Shuffle function from http://stackoverflow.com/a/2450976*/
