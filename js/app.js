@@ -11,12 +11,11 @@ let deck = document.querySelector('.deck')
 /*definingcards*/
 let cards = document.querySelectorAll('.card')
 
- /*moves*/
+
+
 let moves = 0;
 let movesCounter =document.querySelector('.moves');
 movesCounter.innerHTML = moves;
-
-
 
 
 /*stars*/
@@ -47,23 +46,21 @@ function shuffle(array) {
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-for (var i = 0; i < array.length; i++) {
+ var i;
+ for (var i = 0; i < array.length; i++) {
+ cards.innerHTML = '';
+ }
 
 
-}
-
-function resetPage(){
-
-	}
 
 
-     $('.flip').click(function(){
-        $(this).find('.card').toggleClass('flipped');
 
-    });
 
 /*
  * set up the event listener for a card. If a card is clicked:
+ */
+
+ /*
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
@@ -72,3 +69,6 @@ function resetPage(){
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+ function resetPage(){
+
+ 	}
