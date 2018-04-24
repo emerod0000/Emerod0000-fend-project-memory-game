@@ -66,6 +66,18 @@ function shuffle(array) {
 
  /*
  *  - display the card's symbol (put this functionality in another function that you call from this one)
+  */
+
+var showCard = function(){
+	
+this.list.toggle("open");
+this.list.toggle("show");
+this.list.toggle("disabled");
+
+}
+
+
+  /*
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
