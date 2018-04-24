@@ -8,9 +8,11 @@ let card = document.getElementsByClassName("card");
  * Add empty array of cards
  */
 let cards = [...card];
+console.log(cards);
+
 
 /*defining deck*/
-const deck = document.querySelector(".deck");
+const deck = document.getElementById("deckOfCards");
 
 
 
@@ -54,12 +56,13 @@ function shuffle(array) {
 
 var shuffleDeck = shuffle(cards);
 for (var i = 0; i < shuffleDeck.length; i++) {
+	deck.innerHTML = "";
  [].forEach.call(shuffleDeck, function(item){
 
 deck.appendChild(item);
 
  });
-
+cards[i].classList.remove("show", "open", "disabled");
 
 }
 
@@ -82,8 +85,8 @@ deck.appendChild(item);
  var i;
  for (var i = 0; i < cards.length; i++) {
  cards[i].addEventListener("click", showCard);
-
 };
+
 
  /*
  *  - display the card's symbol (put this functionality in another function that you call from this one)
