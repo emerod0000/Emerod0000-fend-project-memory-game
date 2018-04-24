@@ -50,20 +50,20 @@ function shuffle(array) {
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
- var i;
- for (var i = 0; i < array.length; i++) {
- cards.innerHTML = '';
- }
-
-
-
-
+ 
 
 
 /*
  * set up the event listener for a card. If a card is clicked:
+ will go to funtion showCard
  */
-cards.addEventListener('click', showCard);
+
+ var i;
+ for (var i = 0; i < cards.length; i++) {
+ cards[i].addEventListener("click", showCard);
+
+};
+
  /*
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
