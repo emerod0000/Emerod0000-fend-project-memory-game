@@ -3,16 +3,14 @@
  */
 
 /*definingcards*/
-let card = document.querySelectorAll('.card')
+let card = document.getElementsByClassName("card");
 /*
  * Add empty array of cards
  */
 let cards = [...card];
 
 /*defining deck*/
-let deck = document.querySelector('.deck')
-
-
+const deck = document.querySelector(".deck");
 
 
 
@@ -69,9 +67,9 @@ function shuffle(array) {
 
 var showCard = function(){
 
-this.list.toggle("open");
-this.list.toggle("show");
-this.list.toggle("disabled");
+this.classList.toggle("open");
+this.classList.toggle("show");
+this.classList.toggle("disabled");
 
 }
 
