@@ -2,8 +2,12 @@
  * Create a list that holds all of your cards
  */
 
-let array = ["fa fa diamond",  "fa fa diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt",
+let card = ["fa fa diamond",  "fa fa diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt",
 "fa fa-cube", "fa fa-cube","fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
+/*
+ * Add empty array of cards
+ */
+let cards = [...card];
 
 /*defining deck*/
 let deck = document.querySelector('.deck')
