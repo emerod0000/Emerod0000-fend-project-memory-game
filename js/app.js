@@ -43,6 +43,30 @@ function shuffle(array) {
     return array;
 }
 
+
+/*
+ * Begin the game function
+ */
+
+ window.onload = playGame();
+
+ function playGame(){
+
+var shuffleDeck = shuffle(cards);
+for (var i = 0; i < shuffleDeck.length; i++) {
+ [].forEach.call(shuffleDeck, function(item){
+
+deck.appendChild(item);
+
+ });
+
+
+}
+
+ }
+
+
+
 /*
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
