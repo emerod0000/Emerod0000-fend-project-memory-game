@@ -2,8 +2,8 @@
  * Create a list that holds all of your cards
  */
 
-let card = ["fa fa diamond",  "fa fa diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt",
-"fa fa-cube", "fa fa-cube","fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
+/*definingcards*/
+let card = document.querySelectorAll('.card')
 /*
  * Add empty array of cards
  */
@@ -12,8 +12,7 @@ let cards = [...card];
 /*defining deck*/
 let deck = document.querySelector('.deck')
 
-/*definingcards*/
-let cards = document.querySelectorAll('.card')
+
 
 
 
@@ -69,7 +68,7 @@ function shuffle(array) {
   */
 
 var showCard = function(){
-	
+
 this.list.toggle("open");
 this.list.toggle("show");
 this.list.toggle("disabled");
