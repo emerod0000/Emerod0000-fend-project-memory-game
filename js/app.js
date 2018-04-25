@@ -57,7 +57,7 @@ function shuffle(array) {
  * Begin the game function
  */
 
- window.onload = playGame();
+
 
  function playGame(){
 
@@ -77,7 +77,7 @@ cards[i].classList.remove("show", "open", "disabled");
 
  }
 
-
+ window.onload = playGame();
 
 /*
  *   - loop through each card and create its HTML
@@ -93,7 +93,11 @@ cards[i].classList.remove("show", "open", "disabled");
 
  
  for (var i = 0; i < cards.length; i++) {
+
  cards[i].addEventListener("click", showCard);
+ cards[i].addEventListener("click", openCards);
+  
+
 };
 
 
@@ -101,14 +105,19 @@ cards[i].classList.remove("show", "open", "disabled");
  *  - display the card's symbol (put this functionality in another function that you call from this one)
   */
 
-var showCard = function(){
 
+function showCard(event){
 this.classList.toggle("open");
 this.classList.toggle("show");
 this.classList.toggle("disabled");
 
 };
 
+
+function openCards() {
+    openedCards.push(this);
+    var len = openedCards.length;
+};
 
   /*
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
@@ -118,6 +127,4 @@ this.classList.toggle("disabled");
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
- function resetPage(){
-
- 	}
+ 
