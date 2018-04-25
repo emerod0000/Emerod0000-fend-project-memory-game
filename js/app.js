@@ -8,7 +8,8 @@ let card = document.getElementsByClassName("card");
  * Add empty array of cards
  */
 let cards = [...card];
-console.log(cards);
+
+console.log(cards); /*testing it prints an array*/
 
 
 /*
