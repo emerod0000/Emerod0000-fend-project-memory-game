@@ -11,20 +11,27 @@ let cards = [...card];
 console.log(cards);
 
 
+/*
+ * Add empty array of opened cards
+ */
+var openedCards = [];
+
+
 /*defining deck*/
 const deck = document.getElementById("deckOfCards");
 
 
-
+/*stars
 let moves = 0;
 let movesCounter =document.querySelector('.moves');
 movesCounter.innerHTML = moves;
+*/
 
-
-/*stars*/
+/*stars
 let stars = "";
 let starsCounter =document.querySelector('.stars');
 starsCounter.innerHTML = stars;
+*/
 
 
 /*
@@ -55,6 +62,8 @@ function shuffle(array) {
  function playGame(){
 
 var shuffleDeck = shuffle(cards);
+
+var i;
 for (var i = 0; i < shuffleDeck.length; i++) {
 	deck.innerHTML = "";
  [].forEach.call(shuffleDeck, function(item){
@@ -82,7 +91,7 @@ cards[i].classList.remove("show", "open", "disabled");
  will go to funtion showCard
  */
 
- var i;
+ 
  for (var i = 0; i < cards.length; i++) {
  cards[i].addEventListener("click", showCard);
 };
@@ -98,7 +107,7 @@ this.classList.toggle("open");
 this.classList.toggle("show");
 this.classList.toggle("disabled");
 
-}
+};
 
 
   /*
