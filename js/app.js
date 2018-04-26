@@ -114,15 +114,41 @@ this.classList.toggle("disabled");
 
 };
 
-
+ /*
+ *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ */
 function openCards() {
     openedCards.push(this);
-    var len = openedCards.length;
+    var length = openedCards.length;
+if (length === 2) {
+if(openedCards[0].value === openedCards[1].value){
+   cardsMatched();
+}else {
+	noMatch();
+}
+}
+
 };
 
+function cardsMatched(){
+
+}
+
+function noMatch(){
+	
+}
+
+
+
   /*
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ 
  *  - if the list already has another card, check to see if the two cards match
+*/
+
+
+
+
+ /*
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
  *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
