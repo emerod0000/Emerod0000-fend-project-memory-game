@@ -119,8 +119,8 @@ this.classList.toggle("disabled");
  */
 function openCards() {
     openedCards.push(this);
-    var length = openedCards.length;
-if (length === 2) {
+    var cards = openedCards.length;
+if (cards === 2) {
 if(openedCards[0].value === openedCards[1].value){
    cardsMatched();
 }else {
