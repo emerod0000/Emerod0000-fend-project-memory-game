@@ -129,8 +129,20 @@ if(openedCards[0].value === openedCards[1].value){
 }
 
 };
+  /*
+ 
+ *  - if the list already has another card, check to see if the two cards match
+*/
 
 function cardsMatched(){
+    openedCards[0].classList.add("match");
+    openedCards[1].classList.add("match");
+    openedCards[0].classList.remove("show", "open");
+    openedCards[1].classList.remove("show", "open");
+    openedCards = [];
+
+
+
 
 }
 
@@ -140,10 +152,7 @@ function noMatch(){
 
 
 
-  /*
- 
- *  - if the list already has another card, check to see if the two cards match
-*/
+
 
 
 
