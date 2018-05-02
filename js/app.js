@@ -51,6 +51,8 @@ function shuffle(array) {
     }
 
     return array;
+
+    console.log("shuffle function working");
 }
 
 
@@ -72,10 +74,10 @@ for (var i = 0; i < shuffleDeck.length; i++) {
 deck.appendChild(item);
 
  });
-cards[i].classList.remove("show", "open", "disabled");
+cards[i].classList.remove("show", "open", "match", "disable");
 
 }
-
+ console.log("playGame function working");
  }
 
  window.onload = playGame();
@@ -97,7 +99,8 @@ cards[i].classList.remove("show", "open", "disabled");
 
  cards[i].addEventListener("click", showCard);
  cards[i].addEventListener("click", openCards);
-  
+
+   console.log("event listener working");
 
 };
 
@@ -107,10 +110,13 @@ cards[i].classList.remove("show", "open", "disabled");
   */
 
 
-function showCard(event){
+function showCard(){
 this.classList.toggle("open");
 this.classList.toggle("show");
-this.classList.toggle("disabled");
+this.classList.toggle("disable");
+
+ console.log("showCard function working");
+
 
 };
 
@@ -128,27 +134,50 @@ if(openedCards[0].value === openedCards[1].value){
 }
 }
 
+console.log("opecards function working");
 };
+ 
+
   /*
  
  *  - if the list already has another card, check to see if the two cards match
 */
 
 function cardsMatched(){
-    openedCards[0].classList.add("match");
-    openedCards[1].classList.add("match");
-    openedCards[0].classList.remove("show", "open");
-    openedCards[1].classList.remove("show", "open");
+    openedCards[0].classList.add("match", "disable");
+    openedCards[1].classList.add("match", "disable");
+    openedCards[0].classList.remove("show", "open","no-event");
+    openedCards[1].classList.remove("show", "open", "no-event");
     openedCards = [];
 
-
-
+ console.log("Match function working");
 
 }
+
 
 function noMatch(){
-	
+    openedCards[0].classList.add("unmatched");
+    openedCards[0].classList.add("unmatched");
+    openedCards[1].classList.add("unmatched");
+    disable();
+    setTimeout(function(){
+        openedCards[0].classList.remove("show", "open", "no-event","unmatched");
+        openedCards[1].classList.remove("show", "open", "no-event","unmatched");
+        enable();
+        openedCards = [];
+    },1100);
+     console.log("noMatch function working");
 }
+
+
+
+
+
+
+
+    
+
+
 
 
 
