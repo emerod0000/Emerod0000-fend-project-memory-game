@@ -113,7 +113,7 @@ cards[i].classList.remove("show", "open", "match", "disable");
 function showCard(){
 this.classList.toggle("open");
 this.classList.toggle("show");
-this.classList.toggle("disable");
+this.classList.toggle("disabled");
 
  console.log("showCard function working");
 
@@ -125,9 +125,9 @@ this.classList.toggle("disable");
  */
 function openCards() {
     openedCards.push(this);
-    var cards = openedCards.length;
-if (cards === 2) {
-if(openedCards[0].value === openedCards[1].value){
+    var num = openedCards.length;
+if (num === 2) {
+if(openedCards[0].type === openedCards[1].type){
    cardsMatched();
 }else {
 	noMatch();
@@ -144,10 +144,10 @@ console.log("opecards function working");
 */
 
 function cardsMatched(){
-    openedCards[0].classList.add("match", "disable");
-    openedCards[1].classList.add("match", "disable");
-    openedCards[0].classList.remove("show", "open","no-event");
-    openedCards[1].classList.remove("show", "open", "no-event");
+    openedCards[0].classList.add("match", "disabled");
+    openedCards[1].classList.add("match", "disabled");
+    openedCards[0].classList.remove("show", "open");
+    openedCards[1].classList.remove("show", "open");
     openedCards = [];
 
  console.log("Match function working");
@@ -156,7 +156,7 @@ function cardsMatched(){
 
 
 function noMatch(){
-    openedCards[0].classList.add("unmatched");
+    
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
     disable();
@@ -170,6 +170,17 @@ function noMatch(){
 }
 
 
+function disable(){
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.add('disabled');
+    });
+}
+
+function enable(){
+
+document.getElementsByClassName("card").enabled= false;
+
+}
 
 
 
