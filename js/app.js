@@ -22,11 +22,9 @@ var openedCards = [];
 const deck = document.getElementById("deckOfCards");
 
 
-/*stars
-let moves = 0;
+/*moves*/
+let moves= 0;
 let movesCounter =document.querySelector('.moves');
-movesCounter.innerHTML = moves;
-*/
 
 /*stars
 let stars = "";
@@ -113,7 +111,7 @@ cards[i].classList.remove("show", "open", "match", "disable");
 function showCard(){
 this.classList.toggle("open");
 this.classList.toggle("show");
-this.classList.toggle("disabled");
+this.classList.toggle("disable");
 
  console.log("showCard function working");
 
@@ -126,7 +124,11 @@ this.classList.toggle("disabled");
 function openCards() {
     openedCards.push(this);
     var num = openedCards.length;
+    console.log(num);
+    countMoves();
+
 if (num === 2) {
+   
 if(openedCards[0].type === openedCards[1].type){
    cardsMatched();
 }else {
@@ -138,47 +140,56 @@ console.log("opecards function working");
 };
  
 
+
+function countMoves(){
+
+  moves ++;
+   movesCounter.innerHTML = moves;
+
+
+}
+
   /*
  
  *  - if the list already has another card, check to see if the two cards match
 */
 
 function cardsMatched(){
-    openedCards[0].classList.add("match", "disabled");
-    openedCards[1].classList.add("match", "disabled");
-    openedCards[0].classList.remove("show", "open");
-    openedCards[1].classList.remove("show", "open");
-    openedCards = [];
-
+    openedCards[0].classList.add("match", "disable");
+    openedCards[1].classList.add("match", "disable");
+  
+  
  console.log("Match function working");
 
-}
+};
 
 
+  /*
 function noMatch(){
     
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
     disable();
     setTimeout(function(){
-        openedCards[0].classList.remove("show", "open", "no-event","unmatched");
-        openedCards[1].classList.remove("show", "open", "no-event","unmatched");
+        openCards[0].classList.remove("unmatched");
+    openCards[1].classList.remove("unmatched");
         enable();
         openedCards = [];
     },1100);
      console.log("noMatch function working");
-}
+};
 
+*/
 
 function disable(){
     Array.prototype.filter.call(cards, function(card){
-        card.classList.add('disabled');
+        card.classList.add('disable');
     });
 }
 
 function enable(){
 
-document.getElementsByClassName("card").enabled= false;
+
 
 }
 
