@@ -26,11 +26,11 @@ const deck = document.getElementById("deckOfCards");
 let moves= 0;
 let movesCounter =document.querySelector('.moves');
 
-/*stars
+/*stars*/
 let stars = "";
 let starsCounter =document.querySelector('.stars');
-starsCounter.innerHTML = stars;
-*/
+
+
 
 
 /*
@@ -146,8 +146,20 @@ function countMoves(){
   moves ++;
    movesCounter.innerHTML = moves;
 
-
+   if(moves == 16){
+   document.querySelector('.stars').style.color = "green";
+}else if 
+(moves > 2 && moves < 8){
+  document.querySelector('.stars').style.color = "yellow";
+}else if 
+(moves > 8  && moves < 16){
+  document.querySelector('.stars').style.color = "red";
+}else
+    document.querySelector('.stars').style.color = "black";
 }
+
+
+
 
   /*
  
