@@ -163,8 +163,8 @@ function noMatch(){
 //if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)//
 
 function disable(){
-    Array.prototype.filter.call(cards, function(card){
-        card.classList.add('disable');
+    Array.prototype.filter.call(cards, function(cards){
+        card.classList.add("disable");
     });
 }
 
