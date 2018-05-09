@@ -138,15 +138,14 @@ function countMoves(){
    if(moves == 16){
    document.querySelector('.stars').style.color = "green";
 }else if 
-(moves > 2 && moves < 8){
+(moves > 16 && moves <= 24){
   document.querySelector('.stars').style.color = "yellow";
 }else if 
-(moves > 8  && moves < 16){
+(moves > 24) {
   document.querySelector('.stars').style.color = "red";
-}else
-    document.querySelector('.stars').style.color = "black";
 }
-
+}
+   
  
  // if the list already has another card, check to see if the two cards match//
 function cardsMatched(){
