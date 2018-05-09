@@ -161,10 +161,10 @@ function cardsMatched(){
 function noMatch(){
     
     setTimeout(function(){ 
-    openedCards[0].classList.remove('open', 'show');
-    openedCards[1].classList.remove('open', 'show');
+    openedCards[0].classList.remove("open", "show", "disable");
+    openedCards[1].classList.remove("open", "show", "disable" );
     openedCards = [];
-    enable();
+   
        }, 
        500);
      console.log("noMatch function working");
@@ -175,14 +175,6 @@ function noMatch(){
 function disable(){
     Array.prototype.filter.call(cards, function(cards){
         card.classList.add("disable");
-    });
-}
-
-//   //
-function enable(){
-
-Array.prototype.filter.call(cards, function(cards){
-        card.classList.remove("disable");
     });
 }
 
