@@ -27,6 +27,12 @@ let stars = "";
 let starsCounter =document.querySelector('.stars');
 
 
+//Defining restart using query selector//
+let reset =document.querySelector('.restart');
+
+
+//Defining retry button using query selector//
+let retry =document.querySelector('.retry');
 
  // Display the cards on the page//
  //shuffle the list of cards using the provided "shuffle" method below//
@@ -80,6 +86,8 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
  cards[i].addEventListener("click", showCard);
  cards[i].addEventListener("click", openCards);
+ reset.addEventListener("click", restartGame);
+ retry.addEventListener("click", restartGame);
 
    console.log("event listener working");
 
@@ -164,7 +172,8 @@ function noMatch(){
 
 function disable(){
     Array.prototype.filter.call(cards, function(cards){
-        card.classList.add("disable");
+        card.classList.add("disable"
+            );
     });
 }
 
@@ -177,4 +186,10 @@ function enable(){
 
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  
- 
+
+ //resets the game and clears all cards clicked
+  function restartGame(){
+
+    playGame();
+
+  }
