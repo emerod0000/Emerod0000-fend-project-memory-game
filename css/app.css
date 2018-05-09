@@ -76,8 +76,9 @@ h1 {
 }
 
 .deck .card.match {
+     box-shadow: 5px 5px green;
     cursor: default;
-    background: yellow;
+    background: purple;
     font-size: 33px;
 }
 
@@ -93,6 +94,9 @@ h1 {
    
 }
 
+.deck .card.enable {
+    pointer-events: visible;
+   }
 
 /*
  * Styles for the Score Panel

@@ -149,14 +149,14 @@ function countMoves(){
 
  
  // if the list already has another card, check to see if the two cards match//
-//function cardsMatched(){
-  //  openedCards[0].classList.add("match", "disable");
-  //  openedCards[1].classList.add("match", "disable");
- // openedCards = [];
-// console.log("Match function working");
-//
-//};//
-//
+function cardsMatched(){
+    openedCards[0].classList.add("match", "disable");
+    openedCards[1].classList.add("match", "disable");
+  openedCards = [];
+ console.log("Match function working");
+
+};
+
  // if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)//
 function noMatch(){
     
@@ -164,9 +164,9 @@ function noMatch(){
     openedCards[0].classList.remove('open', 'show');
     openedCards[1].classList.remove('open', 'show');
     openedCards = [];
+    enable();
        }, 
        500);
-
      console.log("noMatch function working");
 };
 
@@ -181,9 +181,12 @@ function disable(){
 //   //
 function enable(){
 
-
-
+Array.prototype.filter.call(cards, function(cards){
+        card.classList.remove("disable");
+    });
 }
+
+
 
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  
