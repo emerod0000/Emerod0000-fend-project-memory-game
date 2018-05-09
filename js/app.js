@@ -191,5 +191,7 @@ function enable(){
   function restartGame(){
 
     playGame();
+     let moves = 0;
+    let stars = "";
 
   }
