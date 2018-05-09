@@ -96,24 +96,28 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
  //display the card's symbol (put this functionality in another function that you call from this one)//
 function showCard(){
+	 if(openCards.length < 2) {
 this.classList.toggle("open");
 this.classList.toggle("show");
 this.classList.toggle("disable");
+}else{
+	return false;
+}
+};
 
  console.log("showCard function working");
 
-};
 
 //add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)//
 function openCards() {
     openedCards.push(this);
     var num = openedCards.length;
     console.log(num);
-    countMoves();
+    
 
 if (num === 2) {
-   
-if(openedCards[0].type === openedCards[1].type){
+   countMoves();
+if(openedCards[0].innerHTML === openedCards[1].innerHTML){
    cardsMatched();
 }else {
 	noMatch();
@@ -145,26 +149,24 @@ function countMoves(){
 
  
  // if the list already has another card, check to see if the two cards match//
-function cardsMatched(){
-    openedCards[0].classList.add("match", "disable");
-    openedCards[1].classList.add("match", "disable");
-  
- console.log("Match function working");
-
-};
-
+//function cardsMatched(){
+  //  openedCards[0].classList.add("match", "disable");
+  //  openedCards[1].classList.add("match", "disable");
+ // openedCards = [];
+// console.log("Match function working");
+//
+//};//
+//
  // if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)//
 function noMatch(){
     
-    openedCards[0].classList.add("unmatched");
-    openedCards[1].classList.add("unmatched");
-    disable();
-    setTimeout(function(){
-        openCards[0].classList.remove("unmatched");
-    openCards[1].classList.remove("unmatched");
-        enable();
-        openedCards = [];
-    },1100);
+    setTimeout(function(){ 
+    openedCards[0].classList.remove('open', 'show');
+    openedCards[1].classList.remove('open', 'show');
+    openedCards = [];
+       }, 
+       500);
+
      console.log("noMatch function working");
 };
 
@@ -172,8 +174,7 @@ function noMatch(){
 
 function disable(){
     Array.prototype.filter.call(cards, function(cards){
-        card.classList.add("disable"
-            );
+        card.classList.add("disable");
     });
 }
 
