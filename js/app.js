@@ -131,7 +131,7 @@ console.log("opecards function working");
  //increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 function countMoves(){
 
-  moves ++; //moves the counter up one after each card is clicked//
+  moves  ++; //moves the counter up one after each 2 cards are clicked//
    movesCounter.innerHTML = moves; //displays the values of moves on the page//
 
 //If staement for star colours to change based on the number of moves it takes the user to complete the game//
