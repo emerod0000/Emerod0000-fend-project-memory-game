@@ -22,9 +22,12 @@ const deck = document.getElementById("deckOfCards");
 let moves= 0;
 let movesCounter =document.querySelector('.moves');
 
-//starsusing query selector//
+//defining stars using query selector//
 let stars = "";
 let starsCounter =document.querySelector('.stars');
+let starOne =  document.querySelector('.oneStar');
+let starTwo  = document.querySelector('.twoStars');
+let starThree =  document.querySelector('.threeStars');
 
 
 //Defining restart using query selector//
@@ -86,6 +89,7 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
  cards[i].addEventListener("click", showCard);
  cards[i].addEventListener("click", openCards);
+ cards[i].addEventListener("click", startTimer);
  reset.addEventListener("click", restartGame);
  retry.addEventListener("click", restartGame);
 
@@ -137,12 +141,17 @@ function countMoves(){
 //If staement for star colours to change based on the number of moves it takes the user to complete the game//
    if(moves == 16){
    document.querySelector('.stars').style.color = "green";
+  
 }else if 
 (moves > 16 && moves <= 24){
   document.querySelector('.stars').style.color = "yellow";
+   document.querySelector('.threeStars').remove;
 }else if 
 (moves > 24) {
   document.querySelector('.stars').style.color = "red";
+   document.querySelector('.twoStars').remove;
+   document.querySelector('.threeStars').remove;
+
 }
 }
    
@@ -183,6 +192,8 @@ function disable(){
  
 
  //resets the game and clears all cards clicked
+ //resets the moves to 0
+ //resets the stars to original colour
   function restartGame(){
 
     document.querySelector('.moves').innerHTML = 0;
