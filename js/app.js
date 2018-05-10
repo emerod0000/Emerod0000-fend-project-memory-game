@@ -31,6 +31,12 @@ let starThree =  document.querySelector('.threeStars');
 
 
 //Defining restart using query selector//
+let timer =document.querySelector('.timer');
+
+
+
+
+//Defining restart using query selector//
 let reset =document.querySelector('.restart');
 
 
@@ -82,6 +88,11 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
  window.onload = playGame();//on load of browser game should commence//
 
+//start timer once card is clicked
+function startTimer(){
+
+
+}
 
 //set up the event listener for a card. If a card is clicked://
 //will go to funtion showCard//
