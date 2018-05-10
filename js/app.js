@@ -185,8 +185,10 @@ function disable(){
  //resets the game and clears all cards clicked
   function restartGame(){
 
+    document.querySelector('.moves').innerHTML = 0;
+    document.querySelector('.stars').style.color = "";
+
     playGame();
-     let moves = 0;
-    let stars = "";
+    
 
   }
