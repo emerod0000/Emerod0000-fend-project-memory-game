@@ -90,23 +90,18 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
 //start timer once card is clicked
 function startTimer(){
-
-
+ var seconds = 0;
+  timer = setInterval(function() {
+      seconds ++;
+      document.getElementById("seconds").innerText = seconds % 60;
+            document.getElementById("minutes").innerText = parseInt(seconds / 60);
+        }, 1000);
 }
 
-//set up the event listener for a card. If a card is clicked://
-//will go to funtion showCard//
- for (var i = 0; i < cards.length; i++) {
+  function stopTimer() {
+        clearInterval(timer);
+    }
 
- cards[i].addEventListener("click", showCard);
- cards[i].addEventListener("click", openCards);
- cards[i].addEventListener("click", startTimer);
- reset.addEventListener("click", restartGame);
- retry.addEventListener("click", restartGame);
-
-   console.log("event listener working");
-
-};
 
 
  //display the card's symbol (put this functionality in another function that you call from this one)//
@@ -215,3 +210,17 @@ function disable(){
     
 
   }
+
+  //set up the event listener for a card. If a card is clicked://
+//will go to funtion showCard//
+ for (var i = 0; i < cards.length; i++) {
+
+ cards[i].addEventListener("click", showCard);
+ cards[i].addEventListener("click", openCards);
+ cards[i].addEventListener("click", startTimer);
+ reset.addEventListener("click", restartGame);
+ retry.addEventListener("click", restartGame);
+
+   console.log("event listener working");
+
+};
