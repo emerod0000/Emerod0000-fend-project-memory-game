@@ -143,7 +143,9 @@ function countMoves(){
 
   moves  ++; //moves the counter up one after each 2 cards are clicked//
    movesCounter.innerHTML = moves; //displays the values of moves on the page//
-
+if(moves === 1){
+  startTimer();
+}
 
 //If staement for star colours to change based on the number of moves it takes the user to complete the game//
    if(moves == 16){
@@ -217,7 +219,6 @@ function disable(){
 
  cards[i].addEventListener("click", showCard);
  cards[i].addEventListener("click", openCards);
- cards[i].addEventListener("click", startTimer);
  reset.addEventListener("click", restartGame);
  retry.addEventListener("click", restartGame);
 
