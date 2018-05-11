@@ -31,6 +31,9 @@ let starThree =  document.querySelector('.threeStars');
 
 
 //Defining restart using query selector//
+let seconds = document.getElementById("seconds").innerHTML= 0;
+let minutes = document.getElementById("minutes").innerHTML = 0;
+var interval;
 let timer =document.querySelector('.timer');
 
 
@@ -68,6 +71,7 @@ function shuffle(array) {
  //Begin the game function//
  function playGame(){
 
+
 var shuffleDeck = shuffle(cards);
 
  //loop through each card and create its HTML//
@@ -83,7 +87,23 @@ deck.appendChild(item);
 cards[i].classList.remove("show", "open", "match", "disable");
 
 }
+//reset star colour
+document.querySelector('.stars').style.color = "";
+
+//reset moves
+moves = 0;
+document.querySelector('.moves').innerHTML = 0;
+
+ //reset the timer
+ seconds = 0;
+ minutes = 0;
+ document.getElementById("seconds").innerHTML= 0;
+ document.getElementById("minutes").innerHTML = 0 ; 
+ stopTimer();
+
  console.log("playGame function working");
+
+
  }
 
  window.onload = playGame();//on load of browser game should commence//
@@ -205,12 +225,8 @@ function disable(){
  //resets the stars to original colour
   function restartGame(){
 
-    document.querySelector('.moves').innerHTML = 0;
-    document.querySelector('.stars').style.color = "";
-
-    playGame();
+  playGame();
     
-
   }
 
   //set up the event listener for a card. If a card is clicked://
