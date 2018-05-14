@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
@@ -87,15 +88,22 @@
             </li>
         </ul>
 
-        <div class="modal" hidden="true">
-                  <h2> Congratulations, You have successfully matched all the cards!</h2>
+
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2> Congratulations, You have successfully matched all the cards!</h2>
                   <span class="totalMoves">0</span>  moves were taken
-                  <div class="totalTime"></div>
-                  <div class="starRating"></div>
+                  <div class="totalTime">00:00</div> was the time taken
+                  <div class="starRating">0</div> was the star rating
                   <button class="retry"> Retry</button>
-                </div>
+  </div>
 
-
+</div>
 
 
     </div>

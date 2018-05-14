@@ -37,6 +37,15 @@ var interval;
 let timer =document.querySelector('.timer');
 
 
+//Defining modal by id//
+// Get the modal
+let modal = document.getElementById('myModal');
+
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+
 
 
 //Defining restart using query selector//
@@ -143,7 +152,7 @@ function openCards() {
     openedCards.push(this);
     var num = openedCards.length;
     console.log(num);
-    
+  
 
 if (num === 2) {
    countMoves();
@@ -174,12 +183,12 @@ if(moves === 1){
 }else if 
 (moves > 16 && moves <= 24){
   document.querySelector('.stars').style.color = "yellow";
-   document.querySelector('.threeStars').remove;
+ //  document.querySelector('.threeStars').remove;
 }else if 
 (moves > 24) {
   document.querySelector('.stars').style.color = "red";
-   document.querySelector('.twoStars').remove;
-   document.querySelector('.threeStars').remove;
+  // document.querySelector('.twoStars').remove;
+  // document.querySelector('.threeStars').remove;
 
 }
 }
@@ -189,7 +198,11 @@ if(moves === 1){
 function cardsMatched(){
     openedCards[0].classList.add("match", "disable");
     openedCards[1].classList.add("match", "disable");
+    if (cardsMatched == 16) {
+    endGame();
+  }
   openedCards = [];
+  
  console.log("Match function working");
 
 };
@@ -218,7 +231,11 @@ function disable(){
 
 
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
- 
+ function endGame(){
+
+ modal.style.display = "block";
+ console.log("Modal should show");
+ }
 
  //resets the game and clears all cards clicked
  //resets the moves to 0
