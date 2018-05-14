@@ -47,7 +47,6 @@ let span = document.getElementsByClassName("close")[0];
 
 
 
-
 //Defining restart using query selector//
 let reset =document.querySelector('.restart');
 
@@ -196,14 +195,17 @@ if(moves === 1){
  
  // if the list already has another card, check to see if the two cards match//
 function cardsMatched(){
+   
     openedCards[0].classList.add("match", "disable");
     openedCards[1].classList.add("match", "disable");
-    if (cardsMatched == 16) {
+    
+    if (openedCards == 4) {
     endGame();
   }
   openedCards = [];
   
  console.log("Match function working");
+  console.log(matchedCards);
 
 };
 
