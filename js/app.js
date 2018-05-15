@@ -54,7 +54,7 @@ let reset =document.querySelector('.restart');
 
 
 //Defining retry button using query selector//
-let retry =document.querySelector('.retry');
+let retry =document.getElementById("retry");
 
  // Display the cards on the page//
  //shuffle the list of cards using the provided "shuffle" method below//
@@ -80,6 +80,7 @@ function shuffle(array) {
 
  //Begin the game function//
  function playGame(){
+
 
 
 var shuffleDeck = shuffle(cards);
@@ -126,6 +127,8 @@ function startTimer(){
       document.getElementById("seconds").innerText = seconds % 60;
             document.getElementById("minutes").innerText = parseInt(seconds / 60);
         }, 1000);
+
+  timer = timer.innerHTML;
 }
 
   function stopTimer() {
@@ -204,8 +207,8 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 8){
-    endGame();
+  if (matched == 1){
+    congratsPopup();
   }
   openedCards = [];
 
@@ -239,9 +242,24 @@ function disable(){
 
 
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
- function endGame(){
+ function congratsPopup(){
 
- popup.style.visibility = 'visible';//popup will display with game details//
+
+
+stopTimer();
+
+popup.style.visibility = 'visible';//popup will display with game details//
+document.getElementById("totalMoves").innerHTML = moves;
+
+
+document.getElementById("totalTime").innerHTML = minutes + seconds;
+
+
+ 
+document.getElementById("starRating").innerHTML = stars;                
+                 
+
+
  console.log("Modal should show");//testing comment for console//
  }
 

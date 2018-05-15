@@ -132,7 +132,7 @@ h1 {
 }
 
 #popup{
-    visibility: visible;
+    visibility: hidden;
     width: 760px;
     min-height: 260px;
     background:  #ffffff ;
