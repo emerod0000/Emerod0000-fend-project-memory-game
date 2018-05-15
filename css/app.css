@@ -132,17 +132,17 @@ h1 {
 }
 
 #popup{
-  visibility: hidden;
+    visibility: visible;
     width: 560px;
     min-height: 260px;
-    background: linear-gradient(140deg, #17f266 10%, #09afbc 85%);
+    background:  #00796B ;
     color: #000;
     margin: 320px auto 0 auto;
     position: fixed;
-    z-index: 10;
+    z-index: 50;
     text-align: center;
     padding: 40px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border-radius: 10px;
 
 }
