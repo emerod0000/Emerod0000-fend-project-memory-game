@@ -42,10 +42,11 @@ let timer =document.querySelector('.timer');
 // Get the modal
 let popup = document.getElementById("popup");
 
+//define matched cards at beginning//
+let matched = 0;
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
-
 
 
 //Defining restart using query selector//
@@ -158,6 +159,7 @@ if (num === 2) {
    countMoves();
 if(openedCards[0].innerHTML === openedCards[1].innerHTML){
    cardsMatched();
+
 }else {
 	noMatch();
 }
@@ -174,10 +176,6 @@ function countMoves(){
    movesCounter.innerHTML = moves; //displays the values of moves on the page//
 if(moves === 1){
   startTimer();
-}
-
-if(moves === 2){
-  endGame();
 }
 
 //If staement for star colours to change based on the number of moves it takes the user to complete the game//
@@ -204,11 +202,16 @@ function cardsMatched(){
     openedCards[0].classList.add("match", "disable");
     openedCards[1].classList.add("match", "disable");
 
-    
+    matched ++;
+
+  if (matched == 8){
+    endGame();
+  }
   openedCards = [];
+
  
  console.log("Match function working");
-  console.log(matchedCards);
+  console.log(matched);
 
 };
 
@@ -238,8 +241,8 @@ function disable(){
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  function endGame(){
 
- popup.style.visibility = 'visible';
- console.log("Modal should show");
+ popup.style.visibility = 'visible';//popup will display with game details//
+ console.log("Modal should show");//testing comment for console//
  }
 
  //resets the game and clears all cards clicked
