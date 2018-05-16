@@ -36,7 +36,10 @@ let seconds = document.getElementById("seconds").innerHTML= 0;
 let minutes = document.getElementById("minutes").innerHTML = 0;
 var interval;
 
+let time = "";
 let timer =document.getElementById("timer");
+
+let totalTime = document.getElementById("totalTime");
 
 
 //Defining modal by id//
@@ -253,14 +256,14 @@ document.getElementById("totalMoves").innerHTML = moves;
 
 
 //display the time taken on the popup//
-document.getElementById("timer").innerHTML
+document.getElementById("totalTime").innerHTML = timer;
 
  //display the time taken on the popup//
 //document.getElementById("starRating").innerHTML = stars; //               
                  
-}
 
-
+ console.log("Modal should show");//testing comment for console//
+ }
 
  //resets the game and clears all cards clicked
  //resets the moves to 0
