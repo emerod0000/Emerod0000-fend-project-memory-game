@@ -35,7 +35,8 @@ let starThree =  document.querySelector('.threeStars');
 let seconds = document.getElementById("seconds").innerHTML= 0;
 let minutes = document.getElementById("minutes").innerHTML = 0;
 var interval;
-let timer =document.querySelector('.timer');
+
+let timer =document.getElementById("timer");
 
 
 //Defining modal by id//
@@ -125,10 +126,9 @@ function startTimer(){
   timer = setInterval(function() {
       seconds ++;
       document.getElementById("seconds").innerText = seconds % 60;
-            document.getElementById("minutes").innerText = parseInt(seconds / 60);
+       document.getElementById("minutes").innerText = parseInt(seconds / 60);
         }, 1000);
 
-  timer = timer.innerHTML;
 }
 
   function stopTimer() {
@@ -244,24 +244,23 @@ function disable(){
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  function congratsPopup(){
 
-
-
 stopTimer();
 
 popup.style.visibility = 'visible';//popup will display with game details//
+
+//display moves taken on the popup//
 document.getElementById("totalMoves").innerHTML = moves;
 
 
-document.getElementById("totalTime").innerHTML = minutes + seconds;
+//display the time taken on the popup//
+document.getElementById("timer").innerHTML
 
-
- 
-document.getElementById("starRating").innerHTML = stars;                
+ //display the time taken on the popup//
+//document.getElementById("starRating").innerHTML = stars; //               
                  
+}
 
 
- console.log("Modal should show");//testing comment for console//
- }
 
  //resets the game and clears all cards clicked
  //resets the moves to 0
