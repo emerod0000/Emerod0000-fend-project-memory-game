@@ -42,7 +42,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #ff6600 100%);
+    background: linear-gradient(160deg, #02ccba 0%,  #6b5b95 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -133,10 +133,9 @@ h1 {
 
 #popup{
     visibility: hidden;
+   background: linear-gradient(160deg, #02ccba 0%, white 100%);
     width: 760px;
     min-height: 260px;
-    background:  #ffffff ;
-    border: solid #ff6600 2px;
     color: #000;
     margin: 20px 0 0 0;
     position: absolute;
@@ -150,9 +149,7 @@ h1 {
 
 /* popup Content */
 .popup-content {
-    background-color:  #02ccba ;
     padding: 10px;
-    border: 1px solid #888;
     width: 100%;
 }
 
@@ -169,6 +166,13 @@ h1 {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#retry{
+    background: #02ccba;
+    border: solid black 2px;
+    border-radius: 20px;
+    margin: 50px;
 }
 
 
