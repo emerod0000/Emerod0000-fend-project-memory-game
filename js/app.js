@@ -9,10 +9,8 @@ let cards = [...card];
 console.log(cards); //testing it prints an array//
 
 
-
 //Add empty array of opened cards//
 var openedCards = [];
-
 
 
 //defining deck from element//
@@ -31,14 +29,14 @@ let starTwo  = document.querySelector('.twoStars');
 let starThree =  document.querySelector('.threeStars');
 
 
-//Defining restart using query selector//
-let seconds = document.getElementById("seconds").innerHTML= 0;
-let minutes = document.getElementById("minutes").innerHTML = 0;
-var interval;
+//Defining timer items//
+let minutes = 0;
+let seconds = 0;
+var interval = 0;
+let timer =document.querySelector('.timer');
+timer.innerHTML = minutes +" mins : "+ seconds+" secs";
 
-let time = "";
-let timer =document.getElementById("timer");
-
+//Defining total time for popup//
 let totalTime = document.getElementById("totalTime");
 
 
@@ -85,8 +83,6 @@ function shuffle(array) {
  //Begin the game function//
  function playGame(){
 
-
-
 var shuffleDeck = shuffle(cards);
 
  //loop through each card and create its HTML//
@@ -112,12 +108,11 @@ document.querySelector('.moves').innerHTML = 0;
  //reset the timer
  seconds = 0;
  minutes = 0;
- document.getElementById("seconds").innerHTML= 0;
- document.getElementById("minutes").innerHTML = 0 ; 
+timer.innerHTML = minutes +" mins : "+ seconds+" secs";
+
  stopTimer();
 
  console.log("playGame function working");
-
 
  }
 
@@ -125,19 +120,33 @@ document.querySelector('.moves').innerHTML = 0;
 
 //start timer once card is clicked
 function startTimer(){
- var seconds = 0;
-  timer = setInterval(function() {
-      seconds ++;
-      document.getElementById("seconds").innerText = seconds % 60;
-       document.getElementById("minutes").innerText = parseInt(seconds / 60);
-        }, 1000);
+
+ interval = setInterval(function() {
+
+ timer.innerHTML = minutes +" mins : "+ seconds+" secs";
+
+ seconds++;
+        if(seconds == 60){
+            minutes ++;
+            seconds =0;
+           
+        }
+        
+    },1000);
+  
+
+ //var seconds = 0;
+ // timer = setInterval(function() {
+     // seconds ++;
+    //  document.getElementById("seconds").innerText = seconds % 60;
+     //  document.getElementById("minutes").innerText = parseInt(seconds / 60);
+     //   }, 1000);
 
 }
 
   function stopTimer() {
-        clearInterval(timer);
+        clearInterval(interval);
     }
-
 
 
  //display the card's symbol (put this functionality in another function that you call from this one)//
@@ -181,6 +190,8 @@ function countMoves(){
   moves  ++; //moves the counter up one after each 2 cards are clicked//
    movesCounter.innerHTML = moves; //displays the values of moves on the page//
 if(moves === 1){
+	seconds = 0;
+	minutes = 0;
   startTimer();
 }
 
@@ -201,7 +212,6 @@ if(moves === 1){
 }
 }
    
- 
  // if the list already has another card, check to see if the two cards match//
 function cardsMatched(){
    
@@ -210,7 +220,7 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 1){
+  if (matched == 1){//set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
@@ -234,6 +244,7 @@ function noMatch(){
      console.log("noMatch function working");
 };
 
+
 //if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)//
 
 function disable(){
@@ -243,11 +254,12 @@ function disable(){
 }
 
 
-
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  function congratsPopup(){
 
 stopTimer();
+
+
 
 popup.style.visibility = 'visible';//popup will display with game details//
 
@@ -256,7 +268,9 @@ document.getElementById("totalMoves").innerHTML = moves;
 
 
 //display the time taken on the popup//
-document.getElementById("totalTime").innerHTML = timer;
+finishTime = timer.innerHTML;
+document.getElementById("totalTime").innerHTML =  finishTime;
+
 
  //display the time taken on the popup//
 //document.getElementById("starRating").innerHTML = stars; //               
