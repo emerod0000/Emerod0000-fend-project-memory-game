@@ -22,11 +22,11 @@ let moves= 0;
 let movesCounter =document.querySelector('.moves');
 
 //defining stars using query selector//
-let stars = "";
-let starsCounter =document.querySelector('.stars');
-let starOne =  document.querySelector('.oneStar');
-let starTwo  = document.querySelector('.twoStars');
-let starThree =  document.querySelector('.threeStars');
+//let stars = "";
+//let starsCounter =document.querySelector('.stars');
+let starOne =  document.getElementById("oneStar");
+let starTwo  = document.getElementById("twoStar");
+let starThree =  document.getElementById("threeStar");
 
 
 //Defining timer items//
@@ -99,7 +99,7 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
 }
 //reset star colour
-document.querySelector('.stars').style.color = "";
+//document.querySelector('.stars').style.color = "";
 
 //reset moves
 moves = 0;
@@ -196,21 +196,48 @@ if(moves === 1){
 }
 
 //If staement for star colours to change based on the number of moves it takes the user to complete the game//
-   if(moves == 16){
-   document.querySelector('.stars').style.color = "green";
+
+
+
+ //  if(moves == 16){
+  // document.querySelector('.stars').style.color = "green";
+//}else if 
+//(moves > 16 && moves <= 30){
+//  document.querySelector('.stars').style.color = "yellow";
+ 
+ //}else if
+//(moves > 30) {
+//  document.querySelector('.stars').style.color = "red";
   
-}else if 
-(moves > 16 && moves <= 24){
-  document.querySelector('.stars').style.color = "yellow";
- //  document.querySelector('.threeStars').remove;
-}else if 
-(moves > 24) {
-  document.querySelector('.stars').style.color = "red";
-  // document.querySelector('.twoStars').remove;
-  // document.querySelector('.threeStars').remove;
+//}
+
+
+if (moves <= 16){
+	document.getElementById("oneStar").style.visibility = 'visible';
+	document.getElementById("twoStar").style.visibility = 'visible';
+	document.getElementById("threeStar").style.visibility = 'visible';
+	document.getElementById("oneStar").style.color = 'green';
+	document.getElementById("twoStar").style.color = 'green'; 
+	document.getElementById("threeStar").style.color = 'green';
+ }else if
+(moves > 16 && moves < 30) {
+	document.getElementById("oneStar").style.visibility = 'visible';
+	document.getElementById("twoStar").style.visibility = 'visible';
+	document.getElementById("threeStar").style.visibility = 'hidden';
+	document.getElementById("oneStar").style.color = 'yellow';
+	document.getElementById("twoStar").style.color = 'yellow'; 
+	
+}else if
+(moves > 30) {
+	document.getElementById("oneStar").style.visibility = 'visible';
+	document.getElementById("twoStar").style.visibility = 'hidden';
+	document.getElementById("threeStar").style.visibility = 'hidden';
+	document.getElementById("oneStar").style.color = 'red';
 
 }
-}
+
+
+
    
  // if the list already has another card, check to see if the two cards match//
 function cardsMatched(){
@@ -220,7 +247,7 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 1){//set at 1 for testing purposes
+  if (matched == 8){//set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
@@ -273,7 +300,8 @@ document.getElementById("totalTime").innerHTML =  finishTime;
 
 
  //display the time taken on the popup//
-//document.getElementById("starRating").innerHTML = stars; //               
+ finishStars = starsCounter.innerHTML;
+document.getElementById("starRating").innerHTML = finishStars;             
                  
 
  console.log("Modal should show");//testing comment for console//

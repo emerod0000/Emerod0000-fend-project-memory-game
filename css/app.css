@@ -133,7 +133,7 @@ h1 {
 
 #popup{
     visibility: hidden;
-   background: linear-gradient(160deg, #02ccba 0%, white 100%);
+    background: linear-gradient(160deg, #02ccba 0%, white 100%);
     width: 760px;
     min-height: 260px;
     color: #000;
@@ -173,6 +173,12 @@ h1 {
     border: solid black 2px;
     border-radius: 20px;
     margin: 50px;
+}
+
+#oneStar,
+#twoStar,
+#threeStar{
+    visibility: hidden;
 }
 
 
