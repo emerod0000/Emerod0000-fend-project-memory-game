@@ -12,10 +12,15 @@ Load this link in your browser
 - A popup will appwar when you have matched all the cards.
 - An option will be available to play again, Try to beat your last score.
 
-## How I built the Memory Game
+## How I created the memory game
 I created it with HTML, CSS and Javascript.
 
-created a deck of cards that shuffles when game is refreshed
-created a counter to count the number of moves made by player and timer to know the duration of a play
-added effects to cards when they match and are unmatched
-create a pop-up modal when player wins game
+## Steps followed  to create the memory game
+- I created a deck of cards that shuffles on each play
+- I created a moves counter to count the number of moves made by player.
+- I added a timer to tell the user the time it takes to finish the game.
+- I added a restart feature, if user wants to begin again.
+- Everytime a card is matched they will turn green and stay flipped over
+- I added a pop-up modal when player matches all the cards.
+   - This tells the the number of moves taken, the time and the satr rating they were given.
+   - If they press play gain it resets the game.
