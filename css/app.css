@@ -1,40 +1,32 @@
 html {
     box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: inherit;
 }
-
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
-
 body {
-    background: #ffffff url('../img/darkness.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/darkness.png');
+    /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
-    color:  #02ccba;
+    color: #02ccba;
 }
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 35px;
 }
-
 /*
  * Styles for the deck of cards
  */
@@ -42,7 +34,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%,  #6b5b95 100%);
+    background: linear-gradient(160deg, #02ccba 0%, #6b5b95 100%);
     padding: 32px;
     border-radius: 10px 10p;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -52,7 +44,6 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
-
 .deck .card {
     height: 125px;
     width: 125px;
@@ -66,37 +57,31 @@ h1 {
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
 .deck .card.open {
     transform: rotateY(0);
     background: #673AB7;
     cursor: default;
 }
-
 .deck .card.show {
     font-size: 33px;
 }
-
 .deck .card.match {
-     box-shadow: 5px 5px #00796B;
+    box-shadow: 5px 5px #00796B;
     cursor: default;
     background: green;
     transform: rotate(0);
-    -webkit-transform: rotate(0); /* for Safari */
+    -webkit-transform: rotate(0);
+    /* for Safari */
     transition: 1s ease all;
-    -webkit-transition: 1s ease all; /* for Safari */
+    -webkit-transition: 1s ease all;
+    /* for Safari */
 }
-
-
 .deck .card.disable {
     pointer-events: none;
-   
 }
-
 .deck .card.enable {
     pointer-events: visible;
-   }
-
+}
 /*
  * Styles for the Score Panel
  */
@@ -107,31 +92,26 @@ h1 {
     margin-bottom: 10px;
     font-size: 20px;
 }
-
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
-    margin:  0 5px 0 50px;
+    margin: 0 5px 0 50px;
 }
-
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
-
 .score-panel .restart {
-   float: right;
-   cursor: pointer;
-   margin-left: 150px;
+    float: right;
+    cursor: pointer;
+    margin-left: 150px;
 }
-
 .score-panel .timer {
-   float: right;
-   margin:  0 50px 0 50px;
+    float: right;
+    margin: 0 50px 0 50px;
 }
-
-#popup{
+#popup {
     visibility: hidden;
     background: linear-gradient(160deg, #02ccba 0%, white 100%);
     width: 760px;
@@ -146,94 +126,64 @@ h1 {
     padding: 20px;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border-radius: 10px;
-
 }
-
 /* popup Content */
+
 .popup-content {
     padding: 10px;
     width: 100%;
 }
-
 /* The Close Button */
+
 .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
-#retry{
+#retry {
     background: #02ccba;
     border: solid black 2px;
     border-radius: 20px;
     margin: 50px;
 }
-
-#oneStar,
-#twoStar,
-#threeStar{
+#oneStar, #twoStar, #threeStar {
     visibility: hidden;
 }
-
-
-
 /* for mobile phones*/
 
 @media (max-width: 320px) {
     .deck {
         width: 85%;
-       
     }
-
     .deck .card {
         height: 70px;
         width: 70px;
     }
-
     .score-panel {
-   width: 85%;
-}
-     #popup {
-        font-size: 16px;
-        
+        width: 85%;
     }
-
-   
+    #popup {
+        font-size: 16px;
+    }
 }
-
-
 /* For Tablets and larger screens*/
 
 @media (min-width: 768px) {
-
     .container {
         font-size: 22px;
     }
-
     .deck {
         width: 660px;
         height: 680px;
     }
-
     .deck .card {
         height: 125px;
         width: 125px;
     }
-
-    
-
-
 }
-
-
-
-
-

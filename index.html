@@ -1,112 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Matching Game</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="css/app.css">
-   
-    
+    <meta content="" name="description">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet prefetch">
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet prefetch">
+    <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Memory Game</h1>
         </header>
-
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star" id = "oneStar"></i></li>
-        		<li><i class="fa fa-star" id= "twoStar"></i></li>
-        		<li><i class="fa fa-star" id= "threeStar"></i></li>
-        	</ul>
-
-        	<span class="moves"></span> Moves
-
-           
-           <div class="timer"></div>
-
+            <ul class="stars">
+                <li><i class="fa fa-star" id="oneStar"></i></li>
+                <li><i class="fa fa-star" id="twoStar"></i></li>
+                <li><i class="fa fa-star" id="threeStar"></i></li>
+            </ul><span class="moves"></span> Moves
+            <div class="timer"></div>
             <div class="restart">
-        		<i class="fa fa-repeat" title="Restart game"></i>
-        	</div>
-
+                <i class="fa fa-repeat" title="Restart game"></i>
+            </div>
         </section>
-
         <ul class="deck" id="deckOfCards">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
+            <li class="card"><i class="fa fa-diamond"></i></li>
+            <li class="card"><i class="fa fa-paper-plane-o"></i></li>
+            <li class="card"><i class="fa fa-anchor"></i></li>
+            <li class="card"><i class="fa fa-bolt"></i></li>
+            <li class="card"><i class="fa fa-cube"></i></li>
+            <li class="card"><i class="fa fa-anchor"></i></li>
+            <li class="card"><i class="fa fa-leaf"></i></li>
+            <li class="card"><i class="fa fa-bicycle"></i></li>
+            <li class="card"><i class="fa fa-diamond"></i></li>
+            <li class="card"><i class="fa fa-bomb"></i></li>
+            <li class="card"><i class="fa fa-leaf"></i></li>
+            <li class="card"><i class="fa fa-bomb"></i></li>
+            <li class="card"><i class="fa fa-bolt"></i></li>
+            <li class="card"><i class="fa fa-bicycle"></i></li>
+            <li class="card"><i class="fa fa-paper-plane-o"></i></li>
+            <li class="card"><i class="fa fa-cube"></i></li>
         </ul>
-
-
-
-<div id="popup" class="popup">
-<span class="close">&times;</span>
-  <!-- popup content -->
-
-  <div class="popup-content">
-    <h2>Congratulations!</h2>
-
-        <div><span id="totalMoves">0</span> moves were taken</div>
-        <div><span id="totalTime"></span> was the time taken</div>
-        <div><span id="starRating">  </span> was the star rating</div>
-        <div><button id ="retry">Try Again </button></div>
-  </div>
-</div>
-
+        <div class="popup" id="popup">
+            <span class="close">&times;</span> <!-- popup content -->
+            <div class="popup-content">
+                <h2>Congratulations!</h2>
+                <div>
+                    <span id="totalMoves">0</span> moves were taken
+                </div>
+                <div>
+                    <span id="totalTime"></span> was the time taken
+                </div>
+                <div>
+                    <span id="starRating"></span> was the star rating
+                </div>
+                <div>
+                    <button id="retry">Try Again</button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script src="js/app.js"></script>
+    <script src="js/app.js">
+    </script>
 </body>
 </html>
