@@ -184,3 +184,51 @@ h1 {
 }
 
 
+
+/* for mobile phones*/
+
+@media (max-width: 320px) {
+    .deck {
+        width: 85%;
+       
+    }
+
+    .deck .card {
+        height: 70px;
+        width: 70px;
+    }
+
+    .score-panel {
+   width: 85%;
+}
+
+
+}
+
+
+/* For Tablets and larger screens*/
+
+@media (min-width: 768px) {
+    .container {
+        font-size: 22px;
+    }
+
+    .deck {
+        width: 660px;
+        height: 680px;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+    }
+
+    .popup {
+        width: 60%;
+    }
+}
+
+
+
+
+
