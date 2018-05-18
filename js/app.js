@@ -82,6 +82,7 @@ function shuffle(array) {
  //Begin the game function//
  function playGame(){
 
+window.onload = playGame();//on load of browser game should commence//
 var shuffleDeck = shuffle(cards);
 
  //loop through each card and create its HTML//
@@ -114,11 +115,14 @@ document.querySelector('.moves').innerHTML = 0;
 
  stopTimer();//reset timer
 
+ //popup to appear hidden again//
+ popup.style.visibility = 'hidden';//popup will display with game details//
+
  console.log("playGame function working");//testing function
 
  }
 
- window.onload = playGame();//on load of browser game should commence//
+ 
 
 //start timer once card is clicked
 function startTimer(){
