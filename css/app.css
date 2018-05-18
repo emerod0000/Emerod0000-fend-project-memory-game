@@ -136,6 +136,8 @@ h1 {
     background: linear-gradient(160deg, #02ccba 0%, white 100%);
     width: 760px;
     min-height: 260px;
+    font-family: 'Jazz LET', fantasy;
+    font-size: 24px;
     color: #000;
     margin: 20px 0 0 0;
     position: absolute;
