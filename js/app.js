@@ -162,19 +162,19 @@
  //If statement for star colours to change based on the number of moves it takes the user to complete the game//
  //hide stars based on mumber of moves
  function countStars() {
-  if (moves <= 16) { //star count will be initial value of 3 stars
+  if (moves <= 30) { //star count will be initial value of 3 stars
     document.getElementById("oneStar").style.visibility = 'visible'; //star is visible//
     document.getElementById("twoStar").style.visibility = 'visible'; //star is visible//
     document.getElementById("threeStar").style.visibility = 'visible'; //star is visible//
     document.getElementById("oneStar").style.color = 'green'; //star colour is green//
     document.getElementById("twoStar").style.color = 'green'; //star colour is green//
     document.getElementById("threeStar").style.color = 'green'; //star colour is green//
-  } else if (moves > 16 && moves < 30) {
+  } else if (moves > 30 && moves < 50) {
     document.getElementById("threeStar").style.visibility = 'hidden'; //star is hidden
     document.getElementById("oneStar").style.color = 'yellow'; //star colour is yellow//
     document.getElementById("twoStar").style.color = 'yellow'; //star colour is yellow//
     stars = 2; //star count will be 2 stars//
-  } else if (moves > 30) {
+  } else if (moves > 50) {
     document.getElementById("twoStar").style.visibility = 'hidden'; //star is hidden
     document.getElementById("threeStar").style.visibility = 'hidden'; //star is hidden
     document.getElementById("oneStar").style.color = 'red'; //star colour is red//
@@ -187,7 +187,7 @@
   openedCards[0].classList.add("match", "disable");
   openedCards[1].classList.add("match", "disable");
   matched++;
-  if (matched == 1) { //set at 1 for testing purposes
+  if (matched == 8) { //set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
@@ -232,7 +232,7 @@
  function restartGame() {
   playGame();
  }
- 
+
  //set up the event listener for a card. If a card is clicked://
  //will go to funtion showCard//
  for (var i = 0; i < cards.length; i++) {
