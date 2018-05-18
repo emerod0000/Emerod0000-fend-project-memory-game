@@ -22,8 +22,7 @@ let moves= 0;
 let movesCounter =document.querySelector('.moves');
 
 //defining stars using query selector//
-//let stars = "";
-//let starsCounter =document.querySelector('.stars');
+let stars = 3;
 let starOne =  document.getElementById("oneStar");
 let starTwo  = document.getElementById("twoStar");
 let starThree =  document.getElementById("threeStar");
@@ -47,7 +46,7 @@ let popup = document.getElementById("popup");
 //define matched cards at beginning//
 let matched = 0;
 
-// Get the <span> element that closes the modal
+// closes the modal
 let span = document.getElementsByClassName("close")[0];
 
 
@@ -75,7 +74,7 @@ function shuffle(array) {
 
     return array;
 
-    console.log("shuffle function working");
+    console.log("shuffle function working");//testing function
 }
 
 
@@ -98,8 +97,11 @@ deck.appendChild(item);
 cards[i].classList.remove("show", "open", "match", "disable");
 
 }
-//reset star colour
-//document.querySelector('.stars').style.color = "";
+//reset stars and colour
+document.querySelector('.stars').style.color = "green";
+document.getElementById("oneStar").style.visibility = 'visible';
+document.getElementById("twoStar").style.visibility = 'visible';
+document.getElementById("threeStar").style.visibility = 'visible';
 
 //reset moves
 moves = 0;
@@ -108,11 +110,11 @@ document.querySelector('.moves').innerHTML = 0;
  //reset the timer
  seconds = 0;
  minutes = 0;
-timer.innerHTML = minutes +" mins : "+ seconds+" secs";
+ timer.innerHTML = minutes +" mins : "+ seconds+" secs";
 
- stopTimer();
+ stopTimer();//reset timer
 
- console.log("playGame function working");
+ console.log("playGame function working");//testing function
 
  }
 
@@ -135,13 +137,6 @@ function startTimer(){
     },1000);
   
 
- //var seconds = 0;
- // timer = setInterval(function() {
-     // seconds ++;
-    //  document.getElementById("seconds").innerText = seconds % 60;
-     //  document.getElementById("minutes").innerText = parseInt(seconds / 60);
-     //   }, 1000);
-
 }
 
   function stopTimer() {
@@ -160,7 +155,7 @@ this.classList.toggle("disable");
 }
 };
 
- console.log("showCard function working");
+ console.log("showCard function working");//testing function
 
 
 //add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)//
@@ -170,8 +165,9 @@ function openCards() {
     console.log(num);
   
 
-if (num === 2) {
+if (num === 1 || num ==2 ) { //if opened cards sart counting moves and star rating//
    countMoves();
+   countStars();
 if(openedCards[0].innerHTML === openedCards[1].innerHTML){
    cardsMatched();
 
@@ -180,7 +176,7 @@ if(openedCards[0].innerHTML === openedCards[1].innerHTML){
 }
 }
 
-console.log("opecards function working");
+console.log("opencards function working");//testing function
 };
  
 
@@ -192,47 +188,34 @@ function countMoves(){
 if(moves === 1){
 	seconds = 0;
 	minutes = 0;
-  startTimer();
+  startTimer();//go to startTimer function//
+}
 }
 
-//If staement for star colours to change based on the number of moves it takes the user to complete the game//
+//If statement for star colours to change based on the number of moves it takes the user to complete the game//
+//hide stars based on mumber of moves
+function countStars(){
 
-
-
- //  if(moves == 16){
-  // document.querySelector('.stars').style.color = "green";
-//}else if 
-//(moves > 16 && moves <= 30){
-//  document.querySelector('.stars').style.color = "yellow";
- 
- //}else if
-//(moves > 30) {
-//  document.querySelector('.stars').style.color = "red";
-  
-//}
-
-
-if (moves <= 16){
-	document.getElementById("oneStar").style.visibility = 'visible';
-	document.getElementById("twoStar").style.visibility = 'visible';
-	document.getElementById("threeStar").style.visibility = 'visible';
-	document.getElementById("oneStar").style.color = 'green';
-	document.getElementById("twoStar").style.color = 'green'; 
-	document.getElementById("threeStar").style.color = 'green';
+if (moves <= 16){//star count will be initial value of 3 stars
+	document.getElementById("oneStar").style.visibility = 'visible';//star is visible//
+	document.getElementById("twoStar").style.visibility = 'visible';//star is visible//
+	document.getElementById("threeStar").style.visibility = 'visible';//star is visible//
+	document.getElementById("oneStar").style.color = 'green'; //star colour is green//
+	document.getElementById("twoStar").style.color = 'green'; //star colour is green//
+	document.getElementById("threeStar").style.color = 'green';//star colour is green//
  }else if
 (moves > 16 && moves < 30) {
-	document.getElementById("oneStar").style.visibility = 'visible';
-	document.getElementById("twoStar").style.visibility = 'visible';
-	document.getElementById("threeStar").style.visibility = 'hidden';
-	document.getElementById("oneStar").style.color = 'yellow';
-	document.getElementById("twoStar").style.color = 'yellow'; 
-	
+	document.getElementById("threeStar").style.visibility = 'hidden';//star is hidden
+	document.getElementById("oneStar").style.color = 'yellow';//star colour is yellow//
+	document.getElementById("twoStar").style.color = 'yellow'; //star colour is yellow//
+	stars = 2; //star count will be 2 stars//
 }else if
 (moves > 30) {
-	document.getElementById("oneStar").style.visibility = 'visible';
-	document.getElementById("twoStar").style.visibility = 'hidden';
-	document.getElementById("threeStar").style.visibility = 'hidden';
-	document.getElementById("oneStar").style.color = 'red';
+	document.getElementById("twoStar").style.visibility = 'hidden';//star is hidden
+	document.getElementById("threeStar").style.visibility = 'hidden';//star is hidden
+	document.getElementById("oneStar").style.color = 'red';//star colour is red//
+ stars = 1;//star count will be 1 star//
+}
 
 }
 
@@ -247,7 +230,7 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 8){//set at 1 for testing purposes
+  if (matched == 1){//set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
@@ -299,9 +282,8 @@ finishTime = timer.innerHTML;
 document.getElementById("totalTime").innerHTML =  finishTime;
 
 
- //display the time taken on the popup//
- finishStars = starsCounter.innerHTML;
-document.getElementById("starRating").innerHTML = finishStars;             
+ //display the star rating on the popup//
+document.getElementById("starRating").innerHTML = stars;             
                  
 
  console.log("Modal should show");//testing comment for console//
