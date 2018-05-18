@@ -82,7 +82,7 @@ function shuffle(array) {
  //Begin the game function//
  function playGame(){
 
-window.onload = playGame();//on load of browser game should commence//
+
 var shuffleDeck = shuffle(cards);
 
  //loop through each card and create its HTML//
@@ -99,10 +99,15 @@ cards[i].classList.remove("show", "open", "match", "disable");
 
 }
 //reset stars and colour
-document.querySelector('.stars').style.color = "green";
+
 document.getElementById("oneStar").style.visibility = 'visible';
+document.getElementById("oneStar").style.color = 'green';
+
 document.getElementById("twoStar").style.visibility = 'visible';
+document.getElementById("twoStar").style.color = 'green';
+
 document.getElementById("threeStar").style.visibility = 'visible';
+document.getElementById("threeStar").style.color = 'green';
 
 //reset moves
 moves = 0;
@@ -122,7 +127,7 @@ document.querySelector('.moves').innerHTML = 0;
 
  }
 
- 
+ window.onload = playGame();//on load of browser game should commence//
 
 //start timer once card is clicked
 function startTimer(){
@@ -234,7 +239,7 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 1){//set at 1 for testing purposes
+  if (matched == 8){//set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
