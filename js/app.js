@@ -239,7 +239,7 @@ function cardsMatched(){
 
     matched ++;
 
-  if (matched == 8){//set at 1 for testing purposes
+  if (matched == 1){//set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];

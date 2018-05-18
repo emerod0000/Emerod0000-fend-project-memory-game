@@ -201,14 +201,19 @@ h1 {
     .score-panel {
    width: 85%;
 }
+     #popup {
+        font-size: 16px;
+        
+    }
 
-
+   
 }
 
 
 /* For Tablets and larger screens*/
 
 @media (min-width: 768px) {
+
     .container {
         font-size: 22px;
     }
@@ -223,9 +228,9 @@ h1 {
         width: 125px;
     }
 
-    .popup {
-        width: 60%;
-    }
+    
+
+
 }
 
 
