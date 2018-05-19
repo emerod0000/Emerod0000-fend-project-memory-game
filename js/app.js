@@ -215,7 +215,8 @@
  //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)//
  function congratsPopup() {
   stopTimer();
-  popup.style.visibility = 'visible'; //popup will display with game details//
+
+    popup.style.visibility = 'visible'; //popup will display with game details//
   //display moves taken on the popup//
   document.getElementById("totalMoves").innerHTML = moves;
   //display the time taken on the popup//
@@ -230,15 +231,25 @@
  //resets the moves to 0
  //resets the stars to original colour
  function restartGame() {
-  playGame();
+ playGame();
  }
+
+
+//reset the game
+reset.addEventListener("click", function(){
+window.location.reload();
+});
+
+retry.addEventListener("click", function(){
+window.location.reload();
+
+});
 
  //set up the event listener for a card. If a card is clicked://
  //will go to funtion showCard//
  for (var i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", showCard);
   cards[i].addEventListener("click", openCards);
-  reset.addEventListener("click", restartGame);
-  retry.addEventListener("click", restartGame);
+ 
   console.log("event listener working");
  };
