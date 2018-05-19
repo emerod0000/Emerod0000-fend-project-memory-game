@@ -185,7 +185,7 @@
   openedCards[0].classList.add("match", "disable");
   openedCards[1].classList.add("match", "disable");
   matched++;
-  if (matched == 1) { //set at 1 for testing purposes
+  if (matched == 8) { //set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
