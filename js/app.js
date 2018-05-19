@@ -39,9 +39,7 @@
  //define matched cards at beginning//
  let matched = 0;
 
- // closes the modal
- let span = document.getElementsByClassName("close")[0];
-
+ 
  //Defining restart using query selector//
  let reset = document.querySelector('.restart');
 
@@ -136,7 +134,7 @@
   openedCards.push(this);
   var num = openedCards.length;
   console.log(num);
-  if (num === 1 || num == 2) { //if opened cards sart counting moves and star rating//
+  if (num == 2) { //if opened cards sart counting moves and star rating//
     countMoves();
     countStars();
     if (openedCards[0].innerHTML === openedCards[1].innerHTML) {
@@ -187,7 +185,7 @@
   openedCards[0].classList.add("match", "disable");
   openedCards[1].classList.add("match", "disable");
   matched++;
-  if (matched == 8) { //set at 1 for testing purposes
+  if (matched == 1) { //set at 1 for testing purposes
     congratsPopup();
   }
   openedCards = [];
@@ -236,20 +234,22 @@
 
 
 //reset the game
-reset.addEventListener("click", function(){
-window.location.reload();
-});
+//reset.addEventListener("click", function(){
+//window.location.reload();
+//});
 
 retry.addEventListener("click", function(){
 window.location.reload();
 
 });
 
+
  //set up the event listener for a card. If a card is clicked://
  //will go to funtion showCard//
  for (var i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", showCard);
   cards[i].addEventListener("click", openCards);
- 
+  reset.addEventListener("click", restartGame);
+ // retry.addEventListener("click", restartGame);
   console.log("event listener working");
  };

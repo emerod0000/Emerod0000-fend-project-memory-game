@@ -151,12 +151,12 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
-#retry {
+#retry{
     background: #02ccba;
     border: solid black 2px;
     border-radius: 20px;
     margin: 50px;
-}
+} 
 #oneStar, #twoStar, #threeStar {
     visibility: hidden;
 }
