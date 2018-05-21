@@ -1,4 +1,7 @@
- //Create a list that holds all of your cards//
+ //got some inspiration and ideas from git hub https://github.com/sandraisrael/Memory-Game-fend//
+
+
+//Create a list that holds all of your cards//
  //definingcards by their class//
  let card = document.getElementsByClassName("card");
 
