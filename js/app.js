@@ -199,7 +199,7 @@
     openedCards[0].classList.remove("open", "show", "disable");
     openedCards[1].classList.remove("open", "show", "disable");
     openedCards = [];
-  }, 500);
+  }, 300);
   console.log("noMatch function working");
  };
  //if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)//
