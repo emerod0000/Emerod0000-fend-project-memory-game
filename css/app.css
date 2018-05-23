@@ -1,36 +1,41 @@
 html {
     box-sizing: border-box;
 }
+
 *, *::before, *::after {
     box-sizing: inherit;
 }
+
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
+
 body {
     background: #ffffff url('../img/darkness.png');
     /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
     color: #02ccba;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 35px;
 }
+
 /*
  * Styles for the deck of cards
  */
-
 .deck {
     max-width: 100%;
     min-height: 680px;
@@ -44,6 +49,7 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
+
 .deck .card {
     height: 125px;
     width: 125px;
@@ -57,14 +63,17 @@ h1 {
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
+
 .deck .card.open {
     transform: rotateY(0);
     background: #673AB7;
     cursor: default;
 }
+
 .deck .card.show {
     font-size: 33px;
 }
+
 .deck .card.match {
     box-shadow: 5px 5px #00796B;
     cursor: default;
@@ -76,41 +85,48 @@ h1 {
     -webkit-transition: 1s ease all;
     /* for Safari */
 }
+
 .deck .card.disable {
     pointer-events: none;
 }
+
 .deck .card.enable {
     pointer-events: visible;
 }
+
 /*
  * Styles for the Score Panel
  */
-
 .score-panel {
     text-align: left;
     max-width: 100%;
     margin-bottom: 10px;
     font-size: 20px;
 }
+
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 50px;
 }
+
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
+
 .score-panel .restart {
     float: right;
     cursor: pointer;
     margin-left: 150px;
 }
+
 .score-panel .timer {
     float: right;
     margin: 0 50px 0 50px;
 }
+
 #popup {
     visibility: hidden;
     background: linear-gradient(160deg, #02ccba 0%, white 100%);
@@ -127,17 +143,20 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border-radius: 10px;
 }
+
 /* popup Content */
 .popup-content {
     padding: 10px;
     width: 100%;
 }
+
 .show-popup {
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -145,281 +164,21 @@ h1 {
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
+
 #retry{
     background: #02ccba;
     border: solid black 2px;
     border-radius: 20px;
     margin: 50px;
 } 
+/* hides the stars on startup*/
 #oneStar, #twoStar, #threeStar {
     visibility: hidden;
 }
 
-
-@media all and (min-width:1200px){ 
-   
-    .deck {
-        max-width: 660px;
-        min-height: 680px;
-    }
-    .deck .card {
-        height: 125px;
-        width: 125px;
-    }
-      .score-panel {
-         max-width: 660px;
-}
-}
-@media all and (min-width: 960px) and (max-width: 1199px) { 
-      .container {
-     font-size: 22px;
-    }
-    .deck {
-        max-width: 660px;
-        min-height: 680px;
-    }
-    .deck .card {
-        height: 125px;
-        width: 125px;
-    }
-      .score-panel {
-          max-width: 660px;
-    }
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
- }
-@media all and (min-width: 768px) and (max-width: 959px) { 
- .container {
-     font-size: 22px;
-    }
-    .deck {
-        max-width: 660px;
-        min-height: 680px;
-    }
-    .deck .card {
-        height: 125px;
-        width: 125px;
-    }
-      .score-panel {
-        max-width: 660px;
-
-    }
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
-}
-@media all and (min-width: 480px) and (max-width: 767px){
- .deck {
-       max-width: 85%;
-        min-height: 500px;
-    }
-    .deck .card {
-        height: 75px;
-        width: 55px;
-    }
-  .score-panel {
-          max-width: 85%;
-    }
-
-}
-@media all and (max-width: 599px) { 
- .deck {
-        max-width: 85%;
-        min-height: 500px;
-    }
-    .deck .card {
-        height: 75px;
-        width: 55px;
-    }
-    .score-panel {
-         max-width: 85%;
-    }
-
-
-}
-@media all and (max-width: 479px) { 
-
-.container {
-     font-size: 22px;
-    }
-    .deck {
-         max-width: 85%;
-        min-height: 500px;
-    }
-     .deck .card {
-       height: 90px;
-       width: 70px;
-    }
-      .score-panel {
-        max-width: 85%;
-
-    }
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
-
- }
-
- @media all and (max-width: 320px) { 
-
-.container {
-     font-size: 22px;
-    }
-    .deck {
-        max-width: 85%;
-        min-height: 500px;
-    }
-     .deck .card {
-       height: 90px;
-       width: 70px;
-    }
-      .score-panel {
-        max-width: 85%;
-
-    }
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
-
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-@media (min-width: 320px) { 
-    .deck {
-        width: 100%;
-        min-height: 500px;
-    }
-    .deck .card {
-        height: 80px;
-        width: 50px;
-    }
-    .score-panel {
-        width: 100%;
-    }
-    #popup {
-        font-size: 16px
-}
-}
-
-/* Landscape phones and down
-@media (min-width: 321px) and (max-width: 576px) { 
-
-.deck {
-        width: 100%;
-        min-height: 500px;
-    }
-    .deck .card {
-        height: 80px;
-        width: 50px;
-    }
-    .score-panel {
-        width: 100%;
-    }
-    #popup {
-        font-size: 16px
-}
-}
-
-/* Landscape phone to portrait tablet
-@media (min-width: 577px) and (max-width: 767px) { 
-.container {
-        font-size: 22px;
-    }
-    .deck {
-        width: 100%;
-        height: 400px;
-    }
-    .deck .card {
-        height: 100px;
-        width: 75px;
-    }
-
-      .score-panel {
-        width: 70%;
-
-    }
-
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-}
-
-/* Portrait tablet to landscape and desktop
-@media (min-width: 768px) and (max-width: 979px) { 
-
-.container {
-        font-size: 22px;
-    }
-    .deck {
-        width: 100%;
-        height: 400px;
-    }
-    .deck .card {
-        height: 100px;
-        width: 75px;
-    }
-
-      .score-panel {
-        width: 70%;
-
-    }
-
-    .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
-}
-
-
-/*laptops and desktops
-@media screen and (min-width: 822px) {
-   .deck {
-    width: 660px;
-    min-height: 680px;
-   
-}
-.deck .card {
-    height: 125px;
-    width: 125px;
-  
-} 
-}*/
