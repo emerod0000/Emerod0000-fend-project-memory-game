@@ -10,7 +10,7 @@
  console.log(cards); //testing it prints an array//
 
  //Add empty array of opened cards//
- var openedCards = [];
+ let openedCards = [];
 
  //defining deck from element//
  const deck = document.getElementById("deckOfCards");

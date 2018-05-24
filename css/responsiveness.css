@@ -23,9 +23,10 @@
     padding: 5px;
   }
   #popup.popup{
-  	width: 250px;
-  	height: 150px;
-  	font-size: 14px;
+  width: 250px;
+    height: 200px;
+    font-size: 14px;
+    top: 175px;;
   }
   h2 {
   	font-size: 18px;
@@ -62,13 +63,17 @@
   }
 
    #popup{
-  	width: 250px;
-  	height: 250px;
-  	font-size: 14px;
+  	width: 290px;
+    height: 200px;
+    font-size: 14px;
+    top: 175px;
   }
 
    h2 {
   	font-size: 18px;
+  }
+  #retry{
+  	margin: 5px;
   }
 
 }
@@ -91,8 +96,8 @@
 
    #popup{
   	width: 360px;
-  	height: 250px;
-  	font-size: 14px;
+    height: 225px;
+    font-size: 16px
   }
 
    h2 {
@@ -120,7 +125,7 @@
  #popup{
   	width: 500px;
   	height: 250px;
-  	font-size: 14px;
+  	font-size: 18px;
   }
 
    h2 {
@@ -167,8 +172,7 @@
   }
  #popup{
   	width: 750px;
-  	height: 250px;
-  	font-size: 14px;
+    height: 350px;
   }
 
 }
